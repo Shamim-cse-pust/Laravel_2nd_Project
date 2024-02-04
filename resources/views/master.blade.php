@@ -9,6 +9,7 @@
     <div class="container">
         @yield('title')
     </div>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
   <body>
     @include('include.navbar')
