@@ -9,7 +9,7 @@ class FrontendContoller extends Controller
 {
     public function home()
     {
-        $user=User::all();
+        $user=User::with('nidcard')->get();
         return view('home',[
             'page_name'=> 'Home Page',
             'title'=>"Home",

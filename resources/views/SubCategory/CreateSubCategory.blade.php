@@ -27,8 +27,9 @@
         <form action=" {{ route('subcategory.store')}} " method="POST">
             @csrf
             <div class="mb-3">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="category_name">
-                <option selected>Category Name</option>
+            <label>Category Name</label>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="category_name" required>
+
                 @foreach ($categories as $category)
 
                 <option value={{ $category->id }}>{{ $category->name }}</option>

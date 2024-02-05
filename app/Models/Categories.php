@@ -15,4 +15,9 @@ class Categories extends Model
         'is_active',
     ];
 
+    public function SubCategory()
+    {
+        return $this->hasMany(SubCategories::class);
+    }
+
 }
