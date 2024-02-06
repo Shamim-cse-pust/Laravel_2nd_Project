@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -41,6 +42,22 @@ class FrontendContoller extends Controller
         ];
         $title="service";
     return view('service',compact('product','title'));
+    }
+
+    public function userIndex()
+    {
+        $users = User::all();
+
+        return view('home', [
+            'users' => $users
+        ]);
+    }
+
+
+    public function books()
+    {
+        $books = Book::with(['author', 'publisher', 'booktype'])->get();
+        return $books;
     }
 
 }

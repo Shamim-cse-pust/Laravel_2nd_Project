@@ -29,6 +29,7 @@ Route::get('/send-me-details', SingleactionController::class )->name('sendme');
 Route::resource('/posts', PostController::class);
 Route::resource('/category',CategoryController::class);
 Route::resource('/subcategory',SubCategoryController::class);
+Route::get('/books', [FrontendContoller::class, 'books']);
 
 
 
