@@ -30,7 +30,7 @@ Route::resource('/posts', PostController::class);
 Route::resource('/category',CategoryController::class);
 Route::resource('/subcategory',SubCategoryController::class);
 Route::get('/books', [FrontendContoller::class, 'books']);
-
+Route::get('positions', [FrontendContoller::class, 'positions']);
 
 
 

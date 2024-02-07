@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(NidCard::class);
     }
+
+    public function country()
+    {
+        return $this->hasOne(Country::class, 'id', 'country_id');
+    }
 }
