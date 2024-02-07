@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use App\Models\Country;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
@@ -12,6 +13,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class UserFactory extends Factory
 {
+
+
     /**
      * The current password being used by the factory.
      */
@@ -35,6 +38,7 @@ class UserFactory extends Factory
         ];
     }
 
+
     /**
      * Indicate that the model's email address should be unverified.
      */
@@ -44,4 +48,34 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
-}
+
+ 
+    public function admin()
+    {
+        return $this->state([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('1234'),
+            'remember_token' => Str::random(10),
+            'phone' => '12345678903',
+            'country_id' => 1
+        ]);
+    }
+
+    public function manager()
+    {
+        return $this->state([
+            'name' => 'manager',
+            'email' => 'manager@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('12345'),
+            'remember_token' => Str::random(10),
+            'phone' => '12345678905',
+            'country_id' => 1
+        ]);
+    }
+
+    }
+
+
